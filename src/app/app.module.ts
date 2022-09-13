@@ -7,9 +7,10 @@ import { NgOptimizedImage, provideImgixLoader } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ImgLoadingComponent } from './img-loading/img-loading.component';
+import { TypedFormComponent } from './typed-form/typed-form.component';
 
 @NgModule({
-  declarations: [AppComponent, ImgLoadingComponent],
+  declarations: [AppComponent, ImgLoadingComponent, TypedFormComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
