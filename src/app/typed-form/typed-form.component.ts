@@ -6,6 +6,7 @@ import {
   ReactiveFormsModule,
   UntypedFormGroup,
   UntypedFormControl,
+  FormBuilder,
 } from '@angular/forms';
 
 interface AuthForm {
@@ -23,6 +24,7 @@ interface AuthForm {
 export class TypedFormComponent implements OnInit {
   public form!: FormGroup;
   public untypedForm!: FormGroup;
+  private fb: FormBuilder = new FormBuilder();
 
   constructor() {}
 
@@ -39,6 +41,12 @@ export class TypedFormComponent implements OnInit {
       email: new UntypedFormControl(''),
       password: new UntypedFormControl(''),
     });
+
+    //🥂 or
+    // this.form = this.fb.nonNullable.group({
+    //   email: '',
+    //   password: ''
+    // });
   }
 
   public reset(): void {
