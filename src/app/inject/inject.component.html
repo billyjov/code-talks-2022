@@ -23,3 +23,18 @@
     Welcome to INJECT COMPONENT
   </div>
 </div>
+
+<form [formGroup]="form">
+  <div class="form-group">
+    <label for="name">Email address</label>
+    <input type="text" class="form-control" id="name" placeholder="Enter name"
+      formControlName="name" />
+  </div>
+
+</form>
+
+<div class="alert alert-success m-3">
+  <pre>
+      {{ form.value | json }}
+    </pre>
+</div>

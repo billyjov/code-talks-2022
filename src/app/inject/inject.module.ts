@@ -5,9 +5,10 @@ import { RouterModule } from '@angular/router';
 import { InjectComponent } from './inject.component';
 
 @NgModule({
-  declarations: [InjectComponent],
+  declarations: [],
   imports: [
     CommonModule,
+    InjectComponent,
     RouterModule.forChild([
       {
         path: '',
