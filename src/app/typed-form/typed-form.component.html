@@ -24,32 +24,56 @@
   </div>
 </div>
 
-  <form [formGroup]="form">
-    <div class="form-group">
-      <label for="exampleInputEmail1">Email address</label>
-      <input type="email" class="form-control" id="exampleInputEmail1"
-        aria-describedby="emailHelp" placeholder="Enter email"
-        formControlName="email" />
-      <small id="emailHelp" class="form-text text-muted">We'll never share your
-        email with anyone else.</small>
-    </div>
-    <div class="form-group">
-      <label for="exampleInputPassword1">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1"
-        placeholder="Password" formControlName="password" />
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-    <button type="button" class="btn btn-warning m-3" (click)="reset()">
-      Reset
-    </button>
+<form [formGroup]="form">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1"
+      aria-describedby="emailHelp" placeholder="Enter email"
+      formControlName="email" />
+    <small id="emailHelp" class="form-text text-muted">We'll never share your
+      email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1"
+      placeholder="Password" formControlName="password" />
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="button" class="btn btn-warning m-3" (click)="reset()">
+    Reset
+  </button>
 
-    <button type="button" class="btn btn-success" (click)="fill()">Fill</button>
-  </form>
+  <button type="button" class="btn btn-success" (click)="fill()">Fill</button>
+</form>
 
-  <div class="alert alert-success m-3">
-    <pre>
+<div class="alert alert-success m-3">
+  <pre>
       {{ form.value | json }}
     </pre>
+</div>
+
+<hr>
+
+<div class="alert alert-primary d-flex align-items-center" role="alert">
+  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img"
+    aria-label="Info:">
+    <use xlink:href="#info-fill" />
+  </svg>
+  <div>
+    Welcome to FORM RECORDS
   </div>
+</div>
 
 
+<form [formGroup]="formGroupRecord">
+  <ng-container *ngFor="let key of recordKeys">
+    <div class="form-group">
+      <label for="exampleInputEmail1">{{ key }}</label>
+      <input type="text" class="form-control" id="exampleInputEmail1"
+        [formControlName]="key" />
+    </div>
+  </ng-container>
+
+
+  <button type="button" class="btn btn-primary" (click)="addKey()">add new Key</button>
+</form>
