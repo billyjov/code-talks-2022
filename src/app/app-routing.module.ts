@@ -15,12 +15,21 @@ const routes: Routes = [
   },
   {
     path: 'lazy',
-    loadChildren: () => import('./lazy-load/lazy-load.module').then(m => m.LazyLoadModule)
+    loadChildren: () =>
+      import('./lazy-load/lazy-load.module').then((m) => m.LazyLoadModule),
   },
   {
     path: 'inject',
-    loadChildren: () => import('./inject/inject.module').then(m => m.InjectModule)
-  }
+    loadChildren: () =>
+      import('./inject/inject.module').then((m) => m.InjectModule),
+  },
+  {
+    path: 'reflect',
+    loadComponent: () =>
+      import('./reflect-common/reflect-common.component').then(
+        (c) => c.ReflectCommonComponent
+      ),
+  },
 ];
 
 @NgModule({

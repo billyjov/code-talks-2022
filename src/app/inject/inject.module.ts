@@ -13,6 +13,9 @@ import { InjectComponent } from './inject.component';
       {
         path: '',
         component: InjectComponent,
+        data: {
+          role: 'ADMIN'
+        }
       },
     ]),
   ],
