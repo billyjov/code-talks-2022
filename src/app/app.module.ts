@@ -10,7 +10,7 @@ import { ImgLoadingComponent } from './img-loading/img-loading.component';
 import { TypedFormComponent } from './typed-form/typed-form.component';
 
 @NgModule({
-  declarations: [AppComponent, ImgLoadingComponent, TypedFormComponent],
+  declarations: [AppComponent, ImgLoadingComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -18,6 +18,9 @@ import { TypedFormComponent } from './typed-form/typed-form.component';
     // 🎈 Angular image loading technique v14.2.0
     NgOptimizedImage,
     AppRoutingModule,
+
+    // Standalone components
+    TypedFormComponent,
   ],
   providers: [
     // 🎈 Use this if you have a base url for images v14.2
