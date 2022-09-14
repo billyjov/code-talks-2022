@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Route, RouterModule, Routes, UrlSegment } from '@angular/router';
 
 import { ImgLoadingComponent } from './img-loading/img-loading.component';
+import { CanMatchDemoGuard } from './reflect-common/shared/can-match-demo.guard';
 import { TypedFormComponent } from './typed-form/typed-form.component';
 
 const routes: Routes = [
@@ -29,6 +30,17 @@ const routes: Routes = [
       import('./reflect-common/reflect-common.component').then(
         (c) => c.ReflectCommonComponent
       ),
+
+    // canMatch: [CanMatchDemoGuard],
+
+    // Inline variant
+    // canMatch: [(route: Route, segments: UrlSegment[]) => {
+    //   console.log('hello')
+    //   return true
+    // }],
+    // canActivate: [() => {
+    //   console.log('activate')
+    // }]
   },
 ];
 
