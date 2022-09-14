@@ -13,6 +13,10 @@ const routes: Routes = [
     path: 'forms',
     component: TypedFormComponent,
   },
+  {
+    path: 'lazy',
+    loadChildren: () => import('./lazy-load/lazy-load.module').then(m => m.LazyLoadModule)
+  }
 ];
 
 @NgModule({

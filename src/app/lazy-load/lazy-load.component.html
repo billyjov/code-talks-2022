@@ -20,18 +20,13 @@
     <use xlink:href="#info-fill" />
   </svg>
   <div>
-    THERE ARE NO DOGS TO SEE HERE. WAS A JOKE
+    Welcome to LAZY COMPONENT
   </div>
 </div>
 
-<!-- 🚀 HINT: Images should also be lazy loaded -->
+<button type="button" class="btn btn-primary" (click)="loadLazyContainer()">
+  I want to appear 😎
+</button>
 
-<ng-container *ngFor="let path of dogImagePaths$ | async; index as i">
-  <!-- 💡 1- Common technique: Loading + Lazy -->
-  <img [src]="path">
-
-  <!-- 🎈 2- BuiltIn technique from Angular  -->
-  <!-- <img [rawSrc]="path" width="400" height="400"> -->
-
-
-</ng-container>
+<!-- 🔔 Lazy loading Component-->
+<ng-container #lazyContainer></ng-container>

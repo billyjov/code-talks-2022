@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ImgLoadingComponent } from './img-loading/img-loading.component';
 import { TypedFormComponent } from './typed-form/typed-form.component';
+import { SingletonComponent } from './lazy-load/singleton/singleton.component';
 
 @NgModule({
   declarations: [AppComponent, ImgLoadingComponent, TypedFormComponent],
@@ -18,9 +19,12 @@ import { TypedFormComponent } from './typed-form/typed-form.component';
     // 🎈 Angular image loading technique v14.2.0
     NgOptimizedImage,
     AppRoutingModule,
+
+    // Standalone Imports
+    SingletonComponent,
   ],
   providers: [
-    // 🎈 Use this if you have a base url for images v14.20
+    // 🎈 Use this if you have a base url for images v14.2
     // provideImgixLoader('')
   ],
   bootstrap: [AppComponent],
