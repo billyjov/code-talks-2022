@@ -5,7 +5,7 @@ import { LazyLoadComponent } from './lazy-load.component';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
-  declarations: [LazyLoadComponent],
+  declarations: [],
   imports: [
     CommonModule,
     RouterModule.forChild([
