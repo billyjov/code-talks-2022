@@ -33,6 +33,8 @@ export class TypedFormComponent implements OnInit {
     //   password: new FormControl<string>(''),
     // });
 
+    // TODO: FormRecord
+
     this.form = new UntypedFormGroup({
       email: new UntypedFormControl(''),
       password: new UntypedFormControl(''),
