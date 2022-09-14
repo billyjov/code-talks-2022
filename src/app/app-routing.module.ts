@@ -16,6 +16,10 @@ const routes: Routes = [
   {
     path: 'lazy',
     loadChildren: () => import('./lazy-load/lazy-load.module').then(m => m.LazyLoadModule)
+  },
+  {
+    path: 'inject',
+    loadChildren: () => import('./inject/inject.module').then(m => m.InjectModule)
   }
 ];
 
