@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Route, RouterModule, Routes, UrlSegment } from '@angular/router';
 
 import { ImgLoadingComponent } from './img-loading/img-loading.component';
+import { ReflectCommonComponent } from './reflect-common/reflect-common.component';
 import { CanMatchDemoGuard } from './reflect-common/shared/can-match-demo.guard';
 import { TypedFormComponent } from './typed-form/typed-form.component';
 
@@ -26,10 +27,11 @@ const routes: Routes = [
   },
   {
     path: 'reflect',
-    loadChildren: () =>
-      import('./reflect-common/reflect-common.component').then(
-        (m) => m.ReflectCommonComponent
-      ),
+    component: ReflectCommonComponent,
+    // loadChildren: () =>
+    //   import('./reflect-common/reflect-common.component').then(
+    //     (m) => m.ReflectCommonComponent
+    //   ),
     // loadComponent: () =>
     //   import('./reflect-common/reflect-common.component').then(
     //     (c) => c.ReflectCommonComponent

@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ImgLoadingComponent } from './img-loading/img-loading.component';
 import { TypedFormComponent } from './typed-form/typed-form.component';
+import { ReflectCommonComponent } from './reflect-common/reflect-common.component';
 
 @NgModule({
   declarations: [AppComponent, ImgLoadingComponent],
@@ -20,6 +21,7 @@ import { TypedFormComponent } from './typed-form/typed-form.component';
     AppRoutingModule,
 
     // Standalone components
+    ReflectCommonComponent,
     TypedFormComponent,
   ],
   providers: [
