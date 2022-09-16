@@ -66,14 +66,21 @@
 
 
 <form [formGroup]="formGroupRecord">
-  <ng-container *ngFor="let key of recordKeys">
+  <ng-container *ngFor="let key of recordKeys; let id = index">
     <div class="form-group">
       <label for="record">{{ key }}</label>
-      <input type="text" class="form-control" id="record"
+      <input type="text" class="form-control" [id]="id"
         [formControlName]="key" />
     </div>
   </ng-container>
 
 
-  <button type="button" class="btn btn-primary" (click)="addKey()">add new Key</button>
+  <button type="button" class="btn btn-primary mt-5" (click)="addKey()">add new
+    Key</button>
 </form>
+
+<div class="alert alert-success m-3">
+  <pre>
+    {{ formGroupRecord.value | json }}
+  </pre>
+</div>
