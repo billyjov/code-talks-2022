@@ -26,10 +26,14 @@ const routes: Routes = [
   },
   {
     path: 'reflect',
-    loadComponent: () =>
+    loadChildren: () =>
       import('./reflect-common/reflect-common.component').then(
-        (c) => c.ReflectCommonComponent
+        (m) => m.ReflectCommonComponent
       ),
+    // loadComponent: () =>
+    //   import('./reflect-common/reflect-common.component').then(
+    //     (c) => c.ReflectCommonComponent
+    //   ),
 
     // canMatch: [CanMatchDemoGuard],
 

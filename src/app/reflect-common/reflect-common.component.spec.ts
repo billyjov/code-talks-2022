@@ -1,4 +1,4 @@
-import { reflectComponentType } from '@angular/core';
+import { ComponentMirror, reflectComponentType } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ReflectCommonComponent } from './reflect-common.component';
@@ -26,7 +26,14 @@ fdescribe('ReflectCommonComponent', () => {
   });
 
   it('should have some properties', () => {
-    const mirror = reflectComponentType(ReflectCommonComponent);
+    const mirror: ComponentMirror<ReflectCommonComponent> | null = reflectComponentType(ReflectCommonComponent);
     expect(mirror?.type).toBe(ReflectCommonComponent);
+    expect(mirror?.isStandalone).toBe(true);
+    expect(mirror?.inputs).toEqual([
+      {
+        propName: 'username',
+        templateName: 'username'
+      }
+    ])
   });
 });

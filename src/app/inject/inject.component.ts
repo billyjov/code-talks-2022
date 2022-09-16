@@ -39,20 +39,10 @@ export class InjectComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.injector.runInContext(() => {
-
-    // })
     // const fb: NonNullableFormBuilder = inject(NonNullableFormBuilder, {});
 
     this.form = this.fb.group({
       name: '',
     });
-  }
-
-  test(): void {
-    // this.injector.runInContext(() => {
-    //   const { data } = getSnapshot();
-    //   console.log('route: ', data);
-    // });
   }
 }
